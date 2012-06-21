@@ -63,7 +63,7 @@ def current_installed_version
     version_check_cmd = "npm -g list --parseable --long |  grep -i -o -P -e #{@new_resource.name}@\[0-9]*.\[0-9]*.\[0-9]*"
     p = shell_out!(version_check_cmd)
     p.stdout.split(delimeter)[1].strip
-  rescue Chef::Exceptions::ShellCommandFailed
+  rescue Chef::Exceptions::ShellCommandFailed, Mixlib::ShellOut::ShellCommandFailed
   end
 end
 
