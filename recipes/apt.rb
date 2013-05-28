@@ -9,6 +9,6 @@ apt_repository "node.js" do
   action :add
 end
 
-%w{ nodejs npm }.each do |p|
+%w{ nodejs }.each do |p|
   package p
 end
